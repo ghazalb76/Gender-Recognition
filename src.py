@@ -11,7 +11,7 @@ koll = 0
 num_of_female_f = 0
 num_of_male_f = 0
 no_detection_f = 0
-path = "data/male/*.wav"
+path = "data/female/*.wav"
 flag = True
 file_name_list = []
 for filename in glob.glob(path):
@@ -49,26 +49,14 @@ for filename in glob.glob(path):
             print("male")
             flag = False
             num_of_male_f += 1
-        elif max(STEs) >29:
-            print("female")
-            flag = False
-            num_of_female_f += 1
-            # print("BISEXUAL ")
-            # no_detection_f += 0
-        else:
-            if max(STEs) <20:
-                print('male')
-                flag = False
-                num_of_male_f += 1
-            elif max(STEs)>20:
-                print('female')
-                flag = False
-                num_of_female_f += 1
-            # print("BISEXUAL ")
-            # no_detection_m += 0
-    # if(flag):
-    #     print('female')
-    #     num_of_female_f += 1
-print(num_of_male_f/koll)
+        # else:
+        #     if max(STEs) <20:
+        #         print('male222222222222222')
+        #         flag = False
+        #         num_of_male_f += 1
+    if(flag):
+        print('female')
+        num_of_female_f += 1
+print(num_of_female_f/koll)
 print(koll)
         
